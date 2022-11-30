@@ -8,10 +8,12 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Welcomes cool</h1>
-
+    <h1>Welcomes nice</h1>
+    <p id="tochange"></p>
     <script>
-        fetch('http://localhost:3000/')
+        fetch('http://localhost:3000/').then(res => {
+            document.getElementById('tochange').innerHTML = JSON.stringify(res)
+        })
         Telegram.WebApp.ready();
         Telegram.WebApp.MainButton
             .setText('CLOSE WEBVIEW')
